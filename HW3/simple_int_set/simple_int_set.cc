@@ -27,7 +27,6 @@ void SimpleIntSet::sortElements(){
 }
 
 SimpleIntSet::SimpleIntSet(){
-	std::cout<<"checked"<<std::endl;
 	mElements=new int[mElementCount];	
 	mElementCount=0;
 }
@@ -59,10 +58,6 @@ SimpleIntSet* SimpleIntSet::unionSet(SimpleIntSet& _operand){
 		mElementCount++;
 		mElements[mElementCount-1]=operset[i];
 	} 
-	for (int i=0; i<mElementCount;i++)
-		std::cout<<mElements[i]<<" ";
-	std::cout<<std::endl;
-	
 	sortElements(); 
 	return this;
 }
@@ -113,9 +108,7 @@ void SimpleIntSet::printSet(){
 		std::cout<<mElements[i]<<" ";
 	}
 	std::cout<<"}"<<std::endl;
-	std::cout<<mElementCount<<std::endl;
 }
 /* error
 *** Error in `./test2': free(): invalid next size (fast): 0x00000000019030a0 ***
-destructor가 1개만 호출됨
 */

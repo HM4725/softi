@@ -14,15 +14,21 @@ void SimpleIntSet::sortElements(){
 		}
 	}
 /*Eliminate same element*/
-	for(int i=0; i<mElementCount-1; ++i){
-		if((mElements[i]==mElements[i+1])&&(i!=mElementCount-2)){
-			for(int j=i+1;j<mElementCount-1;j++)
-				mElements[j]=mElements[j+1];
+	int order=0;
+	while(true){
+		if(mElements[order]==mElements[order+1]&&order!=mElementCount-2){
+			for(int i=order; i<mElementCount-1; ++i)
+				mElements[i]=mElements[i+1];
+			mElements[mElementCount-1]=0;
 			mElementCount--;
 		}
-		else if((mElements[i]==mElements[i+1])&&(i==mElementCount-2)){
+		else if(mElements[order]==mElements[order+1]&&order==mElementCount-2){
+			mElements[mElementCount-1]=0;
 			mElementCount--;
+			break;
 		}
+		else if(order==mElementCount-2)	break;
+		else	order++;
 	}
 }
 
@@ -110,5 +116,19 @@ void SimpleIntSet::printSet(){
 	std::cout<<"}"<<std::endl;
 }
 /* error
-*** Error in `./test2': free(): invalid next size (fast): 0x00000000019030a0 ***
+*** Error in `./test': free(): invalid next size (fast): 0x00000000019030a0 ***
+메모리 문제??
+궁금한점 :
+	SimpleIntSet *left = NULL;
+	SimpleIntSet *right = NULL; 
+(x2)	SimpleIntSet *newSet = new SimpleIntSet(elements, elementCount);
+	left = newSet;
+	right = newSet;
+	
+	SimpleIntSet::unionSet(SimpleIntSet& _operand) : definition
+	left->unionSet(*right); : call
+	(argument -> & ???) (argument -> * ???)
+
+	simple_int_set_main.cc : 63.
+	delete elements -> delete [] elements 아님?
 */

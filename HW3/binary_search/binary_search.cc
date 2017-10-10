@@ -41,6 +41,7 @@ BinarySearch::BinarySearch(int *_array, int _arrayCount){
 	mArray=new int[mArrayCount];
 	for(int i=0; i<mArrayCount; ++i)
 		mArray[i]=_array[i];
+	sortArray();
 }
 
 BinarySearch::~BinarySearch(){
@@ -48,6 +49,13 @@ BinarySearch::~BinarySearch(){
 }
 
 int BinarySearch::getIndex(int _element){
-	int midpoint;
-	
+	int start=0,mid,end=mArrayCount-1;
+	while(start<end){
+		mid=(start+end)/2;	
+		if(_element>mArray[mid])
+			start=mid+1;
+		else end=mid;
+	}
+
+	return (_element==mArray[start])?start:-1;
 }

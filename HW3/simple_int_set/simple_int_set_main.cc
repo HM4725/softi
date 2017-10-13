@@ -60,7 +60,7 @@ int main(void)
                 if(left == NULL) left = newSet;
                 else if(right == NULL) right = newSet;
                 
-                delete elements;
+                delete[] elements;
                 elements = NULL;
                 elementCount = 0;
 
@@ -85,6 +85,7 @@ int main(void)
         
         delete left;
         delete right;
+	delete[] argv;
     }
     return 0;
 }

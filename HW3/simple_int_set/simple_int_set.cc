@@ -2,7 +2,10 @@
 #include <iostream>
 
 void SimpleIntSet::sortElements(){
-/*sort integer*/
+
+/* Ignore this function if Count<2 */
+	if(mElementCount<2) return;
+/* sort integer */
 	int hold;
 	for(int i=1; i<mElementCount; ++i){
 		for(int j=0; j<mElementCount-i;++j){
@@ -13,23 +16,27 @@ void SimpleIntSet::sortElements(){
 			}
 		}
 	}
-/*Eliminate same element*/
+/* Eliminate same element */
 	int order=0;
 	while(true){
-		if(mElements[order]==mElements[order+1]&&order!=mElementCount-2){
-			for(int i=order; i<mElementCount-1; ++i)
-				mElements[i]=mElements[i+1];
-			mElements[mElementCount-1]=0;
-			mElementCount--;
+		if(order==mElementCount-2){
+			if(mElements[order]==mElements[order+1]){
+				mElements[mElementCount-1]=0;
+				mElementCount--;
+			}
+			else break;
 		}
-		else if(mElements[order]==mElements[order+1]&&order==mElementCount-2){
-			mElements[mElementCount-1]=0;
-			mElementCount--;
-			break;
+		else {
+			if(mElements[order]==mElements[order+1]){
+				for(int i=order; i<mElementCount-1; ++i)
+					mElements[i]=mElements[i+1];
+				mElements[mElementCount-1]=0;
+				mElementCount--;
+			}
+			else	order++;
 		}
-		else if(order==mElementCount-2)	break;
-		else	order++;
 	}
+	
 }
 
 SimpleIntSet::SimpleIntSet(){

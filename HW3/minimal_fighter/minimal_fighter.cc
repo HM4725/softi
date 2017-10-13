@@ -1,35 +1,35 @@
 #include "minimal_fighter.h"
 
 MinimalFighter::MinimalFighter(){
-	this->mHp=0;
-	this->mPower=0;
-	this->mStatus=Invalid;
+	mHp=0;
+	mPower=0;
+	mStatus=Invalid;
 }
 
 MinimalFighter::MinimalFighter(int _hp, int _power){
-	this->mHp=_hp;
-	this->mPower=_power;
+	mHp=_hp;
+	mPower=_power;
 	if(mHp>0)
-		this->mStatus=Alive;
-	else this->mStatus=Dead;
+		mStatus=Alive;
+	else mStatus=Dead;
 }
 
 
 int MinimalFighter::hp() const {
-	return this->mHp;
+	return mHp;
 }
 
 int MinimalFighter::power() const {
-	return this->mPower;
+	return mPower;
 }
 
 FighterStatus MinimalFighter::status() const {
-	return this->mStatus;
+	return mStatus;
 }
 void MinimalFighter::setHp(int _hp){
-	this->mHp=_hp;
-	if (this->mHp<=0)
-		this->mStatus=Dead;
+	mHp=_hp;
+	if (mHp<=0)
+		mStatus=Dead;
 }
 
 void MinimalFighter::hit(MinimalFighter *_enemy){

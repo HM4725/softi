@@ -1,0 +1,13 @@
+main 함수에서 86번째 줄에 브레이크포인트를 걸고
+실행을 해보면 오류가 나지 않음.
+
+그런데 그냥 처음부터 끝까지 실행을 하면
+delete (동적할당해제) 오류가 남.
+그리고 소멸자가 1개만 실행됨.
+
+delete left는 실행되지만
+delete right는 실행되지 않음.
+
+unionSet(*right)
+SimpleIntSet* SimpleIntSet::unionSet(SimpleIntSet& _operand)에서
+_operand를 잘못다뤄서 그런것 같음. 

@@ -1,6 +1,9 @@
 #include"binary_search.h"
 
 void BinarySearch::sortArray(){
+
+/*Ignore this function if Count<2 */
+	if(mArrayCount<2) return;
 /*sort integer*/
 	int hold;
 	for(int i=1; i<mArrayCount; ++i){
@@ -15,19 +18,22 @@ void BinarySearch::sortArray(){
 /*Eliminate same element*/
 	int order=0;
 	while(true){
-		if(mArray[order]==mArray[order+1]&&order!=mArrayCount-2){
-			for(int i=order;i<mArrayCount-1;++i)
-				mArray[i]=mArray[i+1];
-			mArray[mArrayCount-1]=0;
-			mArrayCount--;
+		if(order==mArrayCount-2){
+			if(mArray[order]==mArray[order+1]){
+				mArray[mArrayCount-1]=0;
+				mArrayCount--;
+			}
+			else break;
 		}
-		else if(mArray[order]==mArray[order+1]&&order==mArrayCount-2){
-			mArray[mArrayCount-1]=0;
-			mArrayCount--;
-			break;
+		else	{
+			if(mArray[order]==mArray[order+1]){
+				for(int i=order;i<mArrayCount-1;++i)
+					mArray[i]=mArray[i+1];
+				mArray[mArrayCount-1]=0;
+				mArrayCount--;
+			}
+			else order++;
 		}
-		else if(order==mArrayCount-2)	break;
-		else 	order++;
 	}
 }
 

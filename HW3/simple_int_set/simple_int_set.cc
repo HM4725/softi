@@ -24,7 +24,7 @@ void SimpleIntSet::sortElements(){
 				mElements[mElementCount-1]=0;
 				mElementCount--;
 			}
-			else break;
+			break;
 		}
 		else {
 			if(mElements[order]==mElements[order+1]){
@@ -71,7 +71,7 @@ SimpleIntSet* SimpleIntSet::unionSet(SimpleIntSet& _operand){
 		mElementCount++;
 		mElements[mElementCount-1]=operset[i];
 	} 
-	sortElements(); 
+	sortElements();
 	return this;
 }
 

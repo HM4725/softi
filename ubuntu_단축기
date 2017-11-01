@@ -37,6 +37,10 @@
 			==>(tmux설치)
 	- F11 : 전체 화면 --> command키 + Ctrl + 위방향키 
 	- locate : file위치 찾기
+	- mv : 파일이동, 이름변경
+		mv ./test.cc /home/leehyeonmin/softi/ : 현재디렉토리의 test.cc를 softi로 이동
+		mv ./test.cc ./test_rename.cc : 현재디렉토리의 test.cc의 이름을 test_rename.cc로 변경
+		mv ./test.cc /home/leehyeonmin/softi/test_rename.cc : 현재디렉토리의 test.cc를 softi로 이동한후 이름을 test_rename.cc로 변경
 
 #Vim
 	- i : 입력모드

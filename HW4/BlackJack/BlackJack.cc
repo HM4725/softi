@@ -33,10 +33,10 @@ int BlackJack(){
 		}
 	}
 
-/* 다른 문자가 입력되면 종료, 0,1이 입력되면 종료, 그외에는 합*/
+/* 다른 문자가 입력되면 종료, 10보다 큰 수,0 ,1 이 입력되면 종료, 그외에는 합*/
 	for(int i=0;i<number; ++i){
 		if(cards[i]!="A"){
-			if(isdigit(cards[i][0])==false||cards[i]=="0"||cards[i]=="1"){
+			if(isdigit(cards[i][0])==false||cards[i]=="0"||cards[i]=="1"||stoi(cards[i])>10){
 				delete[] cards;
 				return -1;
 			}

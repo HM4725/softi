@@ -36,7 +36,7 @@ int main(){
 
 		/* input temporary map */
 			for(size_t i=0; i<height ; ++i){
-				cin>>row_input;
+				getline(cin,row_input);
 				inputs.push_back(row_input);
 			}
 		/* set map */
@@ -90,6 +90,8 @@ int main(){
 		else if(command.find(":quit")!=string::npos){
 			break;
 		}
+		
+		else cout<<"Please type a correct command\n"<<endl;
 
 	}
 	return 0;

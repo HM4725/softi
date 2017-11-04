@@ -1,6 +1,17 @@
 #include<iostream>
 #include<string>
+#define LESSCARD 4294967295
+
 using namespace std;
+
+int getCardsCount(string* _cards, int _num){
+	int i;
+	for(i=0; i<_num; i++){
+		if(_cards[i].empty())	break;
+		cout<<_cards[i]<<endl;
+	}
+	return i;
+}
 
 int BlackJack(){
 	int number,sum=0;
@@ -14,29 +25,40 @@ int BlackJack(){
 	if(number<2) return -1;
 	/* number가 정수가 아닐때,
 		2보다 작은 정수일 때 : return -1; */
-
 	string* cards=new string[number];
 
 /* inputs을 각 카드값로 나눔 */
 	for(int i=0; i<number-1 ; ++i){
-		pos=inputs.find(' ');
+		pos=inputs.find(" ");
+
+		if(pos==LESSCARD){
+			delete[] cards;
+			return -1;
+		}			// 카드가 number 이하로 입력 되었을 때 종료
 		cards[i]=inputs.substr(0,pos);
 		inputs.erase(0,pos+1);
 	}
 	cards[number-1]=inputs;
+//	cout<<getCardsCount(cards,number)<<endl;
+
 
 /* J,Q,K를 10으로 변경 */
 	for(int i=0; i<number; ++i){
-		if(cards[i]=="J"||cards[i]=="Q"||cards[i]=="K"){
+		if(cards[i].size()>=3){
+			delete[] cards;
+			return -1;
+		}			// 카드가 number 이상으로 입력 되었을 때 종료
+
+		if(cards[i][0]=='J'||cards[i][0]=='Q'||cards[i][0]=='K'){
+			cards[i].erase();
 			cards[i]+="10";
-			cards[i].erase(0,1);
 		}
 	}
 
 /* 다른 문자가 입력되면 종료, 10보다 큰 수,0 ,1 이 입력되면 종료, 그외에는 합*/
 	for(int i=0;i<number; ++i){
-		if(cards[i]!="A"){
-			if(isdigit(cards[i][0])==false||cards[i]=="0"||cards[i]=="1"||stoi(cards[i])>10){
+		if(cards[i][0]!='A'){
+			if(isdigit(cards[i][0])==false||stoi(cards[i])==0||stoi(cards[i])==1||stoi(cards[i])>10){
 				delete[] cards;
 				return -1;
 			}
@@ -44,9 +66,11 @@ int BlackJack(){
 		}
 	}
 
+
+
 /* A가 1인지 11인지 판별 */
 	for(int i=0;i<number; ++i){
-		if(cards[i]=="A"){
+		if(cards[i][0]=='A'){
 			if(sum>=0&&sum<11) sum+=11;	
 			else sum+=1;
 		}
@@ -69,10 +93,3 @@ int main(){
 
 	return 0;
 }
-
-/* 	2 K K. 는 되는데
-	2 K K .는 안됨. 마지막 값을 "K "로 인식해버림.
-
-	5 A K 3 을 입력하면 1+10+3으로 인식됨.
-	나머지 2개를 다시 입력할 기회를 주지않음.
-*/

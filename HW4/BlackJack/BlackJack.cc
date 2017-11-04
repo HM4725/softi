@@ -1,12 +1,11 @@
 #include<iostream>
 #include<string>
-#define LESSCARD 4294967295
 
 using namespace std;
 
 int BlackJack(){
 	int number,sum=0;
-	unsigned int pos;
+	size_t pos;
 	string inputs;
 	
 	cin>>number;
@@ -22,7 +21,7 @@ int BlackJack(){
 	for(int i=0; i<number-1 ; ++i){
 		pos=inputs.find(" ");
 
-		if(pos==LESSCARD){
+		if(pos==string::npos){
 			delete[] cards;
 			return -1;
 		}			// 카드가 number 이하로 입력 되었을 때 종료

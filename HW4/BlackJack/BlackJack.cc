@@ -4,15 +4,6 @@
 
 using namespace std;
 
-int getCardsCount(string* _cards, int _num){
-	int i;
-	for(i=0; i<_num; i++){
-		if(_cards[i].empty())	break;
-		cout<<_cards[i]<<endl;
-	}
-	return i;
-}
-
 int BlackJack(){
 	int number,sum=0;
 	unsigned int pos;
@@ -39,8 +30,6 @@ int BlackJack(){
 		inputs.erase(0,pos+1);
 	}
 	cards[number-1]=inputs;
-//	cout<<getCardsCount(cards,number)<<endl;
-
 
 /* J,Q,K를 10으로 변경 */
 	for(int i=0; i<number; ++i){

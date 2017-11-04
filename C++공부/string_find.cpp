@@ -30,5 +30,11 @@ int main(){
 	To use string::npos,
 	you shoud use size_t value type.
 
-	[size_t] has much wider scope than [unsigned int].
+	[size_t] has much wider scope than [unsigned int]. (64bits OS)
+
+	In 32bits OS, sizeof(unsigned int) == 4
+		sizeof(size_t) == 4
+
+	In 64bits OS, sizeof(unsigned int) == 4
+		sizeof(size_t) == 8
 */

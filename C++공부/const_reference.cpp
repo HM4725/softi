@@ -14,7 +14,7 @@ public:
 	}*/ 
 /* 인자가 instance인 constructor 따로 안만들어주면
    constructor 호출 x , 소멸자만 2번 실행 */
-	/*explicit*/ ~Parameter(){
+	~Parameter(){
 		x=0;
 		std::cout<<"destructor"<<std::endl;
 	}
@@ -82,7 +82,7 @@ Parameter arg 임시 instance가 새로 생성되므로
 소멸자가 한번 더 호출되는 것을 방지하기 위한
 2가지 방법이 있다.
 
-1. 생성자와 소멸자 앞에 explicit 키워드를 써준다.
+1. 생성자 앞에 explicit 키워드를 써준다.
    컴파일시 이런 문제 발생시 error가 뜨게해 
    미리 방지해준다. (const와 비슷)
 2. 특정함수의 인자의 타입으로 &reference나 *pointer를

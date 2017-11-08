@@ -99,6 +99,10 @@ int main(){
 //	x3=1 ; //NO! because of const
 //	x3=x2; //NO! because of const
 	x1=10;	//x3:10	
+
+	const int x4=10;
+	x1=x4;
+
 ///////////////////////////////////////
 
 /* const , reference, function */

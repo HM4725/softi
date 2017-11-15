@@ -1,9 +1,41 @@
-# softi
+<!doctype html>
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #eeaaee; 
+    float : left;
+}
 
-hanyang univ. student
+li {
+    float: left;
+}
 
-Hello it`s me.
-From hm_xps15
+li a {
+    display: block;
+    color: powderblue;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+}
 
-한양대학교 컴퓨터소프트웨어학부 17학번
-이현민
+li a:hover {
+    background-color: #ffaa11;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="#hm">이현민</a></li>
+  <li><a href=#cool">멋쟁이</a></li>
+  <li><a href="#HMC">HMC</a></li>
+  <li><a href="#softi">softi</a></li>
+</ul>
+
+</body>
+</html>

@@ -2,6 +2,8 @@
 #include<iostream>
 #include<vector>
 
+bool is_integer(const string& );
+
 int main(){
 	vector<Point> vectors;
 
@@ -23,8 +25,6 @@ int main(){
 			Point temp(tx,ty);
 			temp.name=tname;
 			vectors.push_back(temp);
-
-			cout<<vectors[0].name<<endl;
 		}
 
 		else if(command.find("eval")!=string::npos){
@@ -42,40 +42,74 @@ int main(){
 			Point* ltemp=NULL;
 			Point* rtemp=NULL;
 
-			if(isdigit(tl[0])){
+			if(is_integer(tl)){
 				ltemp=new Point(stoi(tl));
 			}
 			else	{
-				vector<Point>::iterator itr;
-				for(itr=vectors.begin();itr!=vectors.end();itr++){
-					if((*itr).name==tl[0])	break;
-				}
+				if(tl[0]!='-'){
+					vector<Point>::iterator itr;
+					for(itr=vectors.begin();itr!=vectors.end();itr++){
+						if((*itr).name==tl[0])	break;
+					}
 
-				if(itr==vectors.end()){
-					cout<<"input error"<<endl;
-					continue;
+					if(itr==vectors.end()){
+						cout<<"input error"<<endl;
+						continue;
+					}
+					else	{
+						ltemp=new Point(*itr);
+					}
 				}
 				else	{
-					ltemp=new Point(*itr);
+					vector<Point>::iterator itr;
+					for(itr=vectors.begin();itr!=vectors.end();itr++){
+						if((*itr).name==tl[1])	break;
+					}
+
+					if(itr==vectors.end()){
+						cout<<"input error"<<endl;
+						continue;
+					}
+					else	{
+						Point neg_temp(*itr);
+						ltemp=new Point(-neg_temp);
+					}
 				}
 			}
 
 
-			if(isdigit(tr[0])){
+			if(is_integer(tr)){
 				rtemp=new Point(stoi(tr));
 			}
 			else	{
-				vector<Point>::iterator itr;
-				for(itr=vectors.begin();itr!=vectors.end();itr++){
-					if((*itr).name==tr[0])	break;
-				}
+				if(tr[0]!='-'){
+					vector<Point>::iterator itr;
+					for(itr=vectors.begin();itr!=vectors.end();itr++){
+						if((*itr).name==tr[0])	break;
+					}
 
-				if(itr==vectors.end()){
-					cout<<"input error"<<endl;
-					continue;
+					if(itr==vectors.end()){
+						cout<<"input error"<<endl;
+						continue;
+					}
+				else	{
+						rtemp=new Point(*itr);
+					}
 				}
 				else	{
-					rtemp=new Point(*itr);
+					vector<Point>::iterator itr;
+					for(itr=vectors.begin();itr!=vectors.end();itr++){
+						if((*itr).name==tr[1])	break;
+					}
+
+					if(itr==vectors.end()){
+						cout<<"input error"<<endl;
+						continue;
+					}
+					else	{
+						Point neg_temp(*itr);
+						rtemp=new Point(-neg_temp);
+					}
 				}
 			}
 
@@ -89,6 +123,9 @@ int main(){
 			}
 			else if(oper=='*'){
 				cout<<"("<<((*ltemp)*(*rtemp)).x_<<","<<((*ltemp)*(*rtemp)).y_<<")\n";
+			}
+			else	{
+				cout<<"input error"<<endl;
 			}
 
 			if(ltemp!=NULL)	delete ltemp;

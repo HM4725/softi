@@ -40,6 +40,19 @@ Point operator-(const Point& lhs, const Point& rhs){
 }
 
 Point operator*(const Point& lhs, const Point& rhs){
-	Point point_(lhs.x_*rhs.x_,lhs.y_*rhs.y_);
+	Point point_((lhs.x_)*(rhs.x_),(lhs.y_)*(rhs.y_));
 	return point_;
+}
+
+bool is_integer(const string& s){
+	string::const_iterator itr = s.begin();
+	for(itr=s.begin();itr!=s.end();itr++){
+		if(itr==s.begin()){
+				if(!(*itr=='-'||isdigit(*itr) ))	break;
+		}
+		else {
+			if(!isdigit(*itr))	break;
+		}
+	}
+	return !s.empty()&&(itr==s.end());
 }

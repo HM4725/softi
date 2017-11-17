@@ -122,5 +122,6 @@ std::ostream& operator<<(std::ostream& os, const Omok& omok) {
 		}
 		os<<endl;
 	}
+	return os;
 }
 // omok.h에서 정의하면 재정의 문제가 발생함.

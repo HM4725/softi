@@ -117,7 +117,7 @@ std::ostream& operator<<(std::ostream& os, const Omok& omok) {
 	vector<string> board_=omok.getBoard();
 
 	for(vector<string>::iterator itr=board_.begin();itr!=board_.end();++itr){
-		for(int i=0; i<(*itr).size();++i){
+		for(size_t i=0; i<(*itr).size();++i){
 			os<<(*itr)[i]<<" ";
 		}
 		os<<endl;

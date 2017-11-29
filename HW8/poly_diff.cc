@@ -1,8 +1,6 @@
 #include<iostream>
 #include<vector>
 
-// 정수만 입력시!!
-
 using namespace std;
 
 class Polynominal{
@@ -83,7 +81,7 @@ int main(){
 				if(maxdegree==0&&(*itr).find("x")!=string::npos)	maxdegree=1;
 				continue;
 			}
-			degree=stoi((*itr).substr(pos+1,(*itr).size()-(pos+1)));////////////
+			degree=stoi((*itr).substr(pos+1));
 			if(degree>maxdegree)	maxdegree=degree;
 		}
 
@@ -105,7 +103,7 @@ int main(){
 				if(pos==0) {coefficient=1;}
 				else {coefficient=stoi((*itr).substr(0,pos));}
 				pos=(*itr).find("^");
-				degree=stoi((*itr).substr(pos+1,(*itr).size()-(pos+1)));
+				degree=stoi((*itr).substr(pos+1));
 				coefficients[degree]=coefficient;
 			}
 		}

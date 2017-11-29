@@ -6,8 +6,14 @@ Canvas::Canvas(size_t row, size_t col){
 	col_=col;
 	canvas_.resize(col_);
 	for(vector<vector<char> >::iterator itr=canvas_.begin();itr!=canvas_.end();++itr){
-		for(size_t i=0;i<row;++i){
+/*		for(size_t i=0;i<row;++i){
 			itr->push_back('.');
+		}*/
+		(*itr).resize(row_);
+	}
+	for(size_t i=0; i<col_; i++){
+		for(size_t j=0; j<row_; j++){
+			canvas_[i][j]='.';
 		}
 	}
 }
@@ -58,14 +64,33 @@ ostream& operator<<(ostream& os, const Canvas& c){//friend >> no member of class
 
 	int k=0;
 	const vector<vector<char> > temp=c.canvas();// 왜 for문에서 temp대신 c.canvas()쓰면 오류??
-	for(vector<vector<char> >::const_iterator itr1=temp.cbegin();itr1!=temp.cend();++itr1){
+/*	for(vector<vector<char> >::const_iterator itr1=temp.cbegin();itr1!=temp.cend();++itr1){
 		os<<k%10;
 		k++;
 		for(vector<char>::const_iterator itr2=itr1->cbegin();itr2!=itr1->cend();++itr2){
-			os<<*itr2;
+			os<<(int)(*itr2) << " ";
 		}
 		os<<endl;
 	}
+/////////////////////////////////////
+	for(vector<vector<char> >::const_iterator itr1=c.canvas_.cbegin();itr1!=c.canvas_.cend();++itr1){
+		os<<k%10;
+		k++;
+		for(vector<char>::const_iterator itr2=itr1->cbegin();itr2!=itr1->cend();++itr2){
+			os<<(int)(*itr2) << " ";
+		}
+		os<<endl;
+	}
+///////////////////////////////////////
+*/	for(vector<vector<char> >::const_iterator itr1=c.canvas().cbegin();itr1!=c.canvas().cend();++itr1){
+		os<<k%10;
+		k++;
+		for(vector<char>::const_iterator itr2=itr1->cbegin();itr2!=itr1->cend();++itr2){
+			os<<(int)(*itr2) << " ";
+		}
+		os<<endl;
+	}
+
 
 	return os;
 }

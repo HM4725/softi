@@ -21,13 +21,14 @@ class Canvas {
 
 		size_t row() const { return row_; }
 		size_t col() const { return col_; }
-		vector<vector<char> > canvas() const { return canvas_; } 
+		vector<vector<char> >& canvas() const { return ref_canvas; } 
 	private:
 		// 그려진 모양을 저장할 수 있도록 데이터멤버를 정의 (resize 가능에 주의)
 		friend ostream& operator<<(ostream& os, const Canvas& c);
 
 		size_t row_,col_;
 		vector<vector<char> > canvas_;
+		vector<vector<char> >& ref_canvas=canvas_;
 };
 
 class Shape {

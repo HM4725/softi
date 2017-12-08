@@ -1,7 +1,6 @@
 #include<iostream>
 #include<stdlib.h>
 #include<iomanip>
-//include<time.h>	..?? time()?
 
 #define CORRECT true
 #define WRONG false
@@ -42,25 +41,14 @@ void MontyHall(int _strategy,int& _corrects){
 	
 	int chosendoor=rand()%3;
 
-again:	//If _starategy==RANDOM, twice. Else, once.
 	if(chosendoor==presentdoor){
-		if(_strategy==KEEP){
-			_corrects++;	/*CORRECT*/
-		}
-		else if(_strategy==CHANGE){/*WRONG*/}
-		else {	//_strategy==RANDOM
-			_strategy=(rand()%2)+1;	//KEEP or CHANGE
-			goto again;
-		}
+		if(_strategy==RANDOM){ _strategy=(rand()%2)+1;}
+		if(_strategy==KEEP){ _corrects++; }
+		/*else if(_strategy==CHANGE) choose wrong door*/
 	}
-	else {	//chosendoor!=presentdoor	>>>there are 1correct door and 1wrong door.
-		if(_strategy==KEEP){/*WORNG*/}
-		else if(_strategy==CHANGE){
-			_corrects++;	/*CORRECT*/
-		}
-		else {	//_strategy==RANDOM
-			_strategy=(rand()%2)+1;	//KEEP or CHANGE
-			goto again;
-		}
+	else {	//chosendoor!=presentdoor
+		if(_strategy==RANDOM){_strategy=(rand()%2)+1;}
+		if(_strategy==CHANGE){ _corrects++;}
+		/*else if(_strategy==KEEP) choose worng door */
 	}
 }

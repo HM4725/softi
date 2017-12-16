@@ -1,20 +1,19 @@
 #include<stdio.h>
 
 ////////////////////////////////제작자코드
-typedef struct userdata{
+struct userdata{
 	int nAge;
 	char szName[32];
 	void(*Print)(struct userdata *);
-} USERDATA;
-
-void PrintUserData(USERDATA *pUser){
+};
+void PrintUserData(struct userdata *pUser){
 	printf("%d, %s\n", pUser->nAge,pUser->szName);
 }
 
 ////////////////////////////////사용자코드
 
 int main(){
-	USERDATA hm={20,"LEE",PrintUserData};
+	struct userdata hm={20,"LEE",PrintUserData};
 
 	//출력
 	//1
@@ -28,6 +27,7 @@ int main(){
 
 	return 0;
 }
+
 
 /*
 C : struct  --> function: only declaration

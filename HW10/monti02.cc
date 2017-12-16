@@ -1,8 +1,8 @@
 #include<iostream>
-#include<stdlib.h>
+#include<cstdlib>
 #include<iomanip>
 #include<vector>
-
+#include<ctime>
 #define CORRECT true
 #define WRONG false
 
@@ -13,6 +13,7 @@ void MontyHall(int,int,int&);
 enum Strategy {	KEEP=1, CHANGE=2, RANDOM=3 };
 
 int main(){
+	clock_t start,end;
 	int strategy,times,doors_num;
 	int corrects=0;
 	cin>>strategy;
@@ -23,6 +24,8 @@ int main(){
 	if(doors_num<=2||doors_num>=100) return 0;
 
 	srand(time(NULL));
+	
+	start=clock();
 	int turn=0;
 	while(turn++!=times){
 		MontyHall(strategy,doors_num,corrects);
@@ -30,6 +33,8 @@ int main(){
 
 	cout<<fixed<<setprecision(1)<<(double)corrects/times*100<<"% "<<"("<<corrects<<"/"<<times<<")"<<endl;
 
+	end=clock();
+	cout<<fixed<<setprecision(4)<<"Runtime:"<<(float)(end-start)/CLOCKS_PER_SEC<<"sec"<<endl;
 	return 0;
 }
 

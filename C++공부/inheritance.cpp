@@ -6,7 +6,7 @@ using std::endl;
 class Parent{
 	public:
 		Parent() { cout<<" Parent "; }
-		virtual ~Parent() { cout<<" ~Parent "; }
+		~Parent() { cout<<" ~Parent "; }
 };
 
 class Child : public Parent {

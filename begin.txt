@@ -1,0 +1,44 @@
+1. 사운드안나옴
+	Startup Applications -> Add -> Command: /usr/bin/pulseaudio
+2. vi오류
+	apt-get -y install vim
+3. root계정 시작시 메세지 
+	vi .profile -> mesg n || true 지우기
+			#mesg n || true 처리
+4. grub 설정
+	vi /etc/default/grub
+	GRUB_TIMEOUT=10 -> 0
+5. 한글입력 안됨
+	[System Settings]
+	[Language Support] 업데이트 ( 또는 apt-get install fcitx-hangul )
+	Keyboard input method system: fcitx
+	[System Settings]
+	[Keyboard] 
+	Typing: All -> Disabled
+		Compose Key -> Right Alt
+		Switch to next source -> Multikey ( 한영키 )
+	reboot
+	[오른쪽 위 키보드아이콘] ( fcitx )
+	Configure Current Input Method
+	+ -> uncheck Only Show Current Language -> Hangul
+	Keyboard-Korean-Korean(101/104) -> -
+	[Global Config]
+	Hotkey
+	Trigger Input Method -> MultiKey Multikey ( 한영키 )
+	Extra key for trigger input method -> Disabled
+	Program
+	Share State Among Window -> All
+6. root계정 비밀번호 설정
+	방법1)	sudo passwd root
+		사용자 계정의 암호 입력
+		관리자 암호 설정
+	방법2)	sudo su - root
+		사용자 계정의 암호 입력
+		passwd
+		관리자 암호 설정
+7. 로그인시 계정 입력칸 생성
+	vi /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
+	맨 아랫줄에 greeter-show-manual-login=true 추가
+	reboot
+8. vim 설정
+	vi ~/.vimrc

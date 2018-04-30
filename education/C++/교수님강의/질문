@@ -1,0 +1,41 @@
+질문1 {
+	int inum;
+	cin >>inum;
+
+	: 여기서 입력받은 inum의 변수종류가 int값이 아닐때 그것을 판별하는 함수??
+}
+
+질문2 {
+	sscanf(str1,"name: %s",str2);
+	인자 : string 이면 안됨 --> char * 이면 됨.
+	arguew
+ment1 : str1.c_str() 하면 가능
+	그런데 argument3 : str2.c_str()은 안됨.  ---> 해결책?
+}
+
+질문3 {
+	gcc -Wall -g my_program.c -o my_program  --> -Wall 경고를 최대한 많이줘라
+		--> -g gdb디버깅할때 list를 출력할 수 있
+	gcc -o my_program myprogram.c
+}
+
+질문4 {
+	<stdio.h>
+	<string><iostream>도 header file???
+}
+
+질문5 {
+	int main()
+	int main(int argc, char** argv) -- argument
+}
+
+질문6 {
+	string vs char*
+	동적할당?차이?
+
+}
+
+질문7 {
+	declare : extern char x; , int function(int);
+	define : char y; , int function(int num){ return num-1; }
+}

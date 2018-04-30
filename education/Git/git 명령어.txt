@@ -1,0 +1,18 @@
+pwd 현재 위치
+ls 하위폴더 보여줌
+mkdir 하위폴더 생성
+cd-  -로 이동
+cd .. 상위폴더 이동
+
+http://hconnect.hanyang.ac.kr/2017_ITE1014_12812/Notice.git
+http://hconnect.hanyang.ac.kr/2017_ITE1014_12812/2017_ITE1014_2017030182.git
+
+#저장방법(upload)
+ git add *
+ git commit -m "1"
+ git push
+
+ cf) git push -u origin +master   : 강제 push
+
+#파일 다운방법(download)
+ git pull origin~

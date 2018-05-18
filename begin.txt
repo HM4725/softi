@@ -42,3 +42,9 @@
 	reboot
 8. vim 설정
 	vi ~/.vimrc
+9. shutdown이 안 될 때
+	sudo vi /etc/default/grub
+	GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+	-> GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pci=noacpi"
+	pci=noaccpi 추가
+	

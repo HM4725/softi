@@ -9,8 +9,8 @@ void example1(){
 }	// segentation Error
 
 void example2(){
-//	int* pa=100;
-//	*pa=10;
+	int* pa=100;
+	*pa=10;
 }	// 100 -> 0x~ : from int to pointer without casting
 
 int main(){

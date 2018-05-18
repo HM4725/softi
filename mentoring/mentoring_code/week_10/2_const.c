@@ -20,4 +20,8 @@ void main(){
 	*pb=30;	// OK!
 	// int const * p ???
 
+	int c=30;
+	int const *pc=&a;
+	*pc=30;
+	pc=&b;
 }

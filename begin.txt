@@ -42,9 +42,11 @@
 	reboot
 8. vim 설정
 	vi ~/.vimrc
-9. shutdown이 안 될 때
+9. shutdown이 안 될 때: xps15에서 ubuntu사용시 ACPI ERROR
 	sudo vi /etc/default/grub
 	GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 	-> GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pci=noacpi"
-	pci=noaccpi 추가
-	
+	pci=noacpi 추가 (acpi안씀)
+	-> shutdown 제대로 됨
+	-> 노트북 닫았다 열면 다시 안켜짐
+	-> 밝기 조절 설정 안됨

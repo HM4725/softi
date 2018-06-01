@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<termio.h>
 
+#ifndef HMC
+#define HMC
 int getch(void){
 	int ch;
 
@@ -22,7 +24,7 @@ int getch(void){
 
 	return ch;
 }
-
+#endif
 
 /*	1.To use getch() ---> conio.h (MS DOS header file)
 	2.already include <stdio.h>

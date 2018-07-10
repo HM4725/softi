@@ -1,0 +1,7 @@
+Given a string of digits, generate all possible valid IP address combinations.
+
+IP address must follow the format A.B.C.D where A, B, C, and D are numbers between 0 and 255.
+
+Example)
+input: "2542540121"
+output: ['254.25.40.121','254.254.0.121']

@@ -7,5 +7,5 @@ vi /etc/systemd/system/getty@tty1.service.d/override.conf
 #type
 [Service]
 ExecStart=
-ExecStart=-/sbin/agetty --noissue --autologin root %I %TERM
+ExecStart=-/sbin/agetty --noissue --autologin root %I $TERM
 Type=idle

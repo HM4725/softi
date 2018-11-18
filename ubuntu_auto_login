@@ -1,0 +1,11 @@
+#set root password
+sudo passwd root
+
+mkdir /etc/systemd/system/getty@tty1.service.d
+vi /etc/systemd/system/getty@tty1.service.d/override.conf
+
+#type
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --noissue --autologin root %I %TERM
+Type=idle

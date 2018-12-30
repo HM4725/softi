@@ -1,13 +1,77 @@
-# HMC 이현민
-## 한양대학교 
+# Introduction to Softi
 
-### 컴퓨터소프트웨어학부
+## CreativeProgramming(C++)
+Im not good at C++. I should practice C++ code again. I studied C++ when I was a freshman, 2nd semester. But now I forgot C++. So, I should study it.
 
-* 안녕하세요.
+* C++study: Practice codes of C++. Look over them again.
 
-* `17학번`
+* HWn: Homework codes of Creative Programming Class (1-2).
 
-```
-1001000011001010110110001101100011011111010000011001001011000001110110110100000110011001100010111000101101000000100100001011001110001011100111101001110010011011100100101001110001011101010000001001000010110010101010110100000010100110110010101101111111101010110110010100000010100110111010011110101111001000110010111101110011101000010111010100000110000110110111111101101111100001111010101110100011001010111001010100000010100110110111101100110011101000111011111100001011100100110010110100000110001011110111011100111011010011110111001100101011001010111001001101001111011101110011110100000010011011110000101101010011011110111001000101110101000001011001000110000101100011011011110100000110001011110111001110010011011110110110001101100011001011110010000101110101000000100111001101001011000110110010110100000011101000110111110100000111011010110010101100101011101001010000011111001011011111111010100101110
+* HW10: The Monti hole game.
 
-```
+## OS_practice
+My favorite field: Operating Sytem.
+
+I will add more system codes.
+
+## mentoring
+The tutoring, mentoring directory.
+
+Langauge: Python, C.
+
+* material: mentoring pdf files.
+
+* mentoring_code: practice codes for mentoring classes.
+
+They are for newbies.
+
+## ubuntu
+In this directory, there are text files about Ubuntu.
+
+Include
+
+How to set the initial system.
+
+How to fix errors of Ubuntu.
+
+Commands of Ubuntu.
+
+## HMC
+The challenging codes.
+Challenging, curious, favorite, and smart.
+
+* DailyProgramming: DailyProgramming suggests a programming problem daily. Then I solve it.
+
+* SudokuSolution: The program which solves a sudoku game.
+
+* etc: et cetera.
+``` getch.h: getch linux version code ``` 
+
+## dataStructure
+In the dataStructure directory, there are codes of data structures.
+
+1. basic: In fact, not a data structure. It is just for calculations and dynamic allocations.
+
+2. linkedList
+
+3. binarySearchTree
+
+4. stack
+
+5. heap
+
+6. AVL_Tree
+
+7. graph
+
+8. disjointSetMaze: Not a data structure. This code is used for making a maze with disjoint sets.
+
+9. dijkstra: Not a data structure. It is the dijkstra algorithm using a graph.
+
+10. BFS_DFS: Not a data structure. They are the Breadth-First Search code and the Depth-First Search code.
+
+11. hash
+
+## test
+It is a directory for testing codes.
+

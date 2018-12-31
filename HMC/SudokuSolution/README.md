@@ -54,16 +54,20 @@ given numbers 1, 2, 7, 9 on the row, the row variable of the box has 101000011. 
 them is integer. To have 9 bits, they has more than 9bits. So sudokuSolve chose the 4bytes data type.
 
 * Find a box that has the smallest number of candidates.
+
 To find min, sodokuSolve uses a heap data structure.
 
 * If the number is 1, continue in the current snapshot.
+
 Put the candidate on the box. Then pick the minimun ncandi box again.
 
 * Else if the number is more than 1, continue in a new snapshot.
+
 Take a new snapshot. Then put a candidate on the box and continue recursively.
 If the candidate is wrong, put another candidate.
 
 * Else if the number is 0, stop.
+
 It is wrong. Move back to the previous snapshot. Then choice another number.
 
 ## Analysis

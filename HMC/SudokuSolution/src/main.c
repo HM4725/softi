@@ -20,16 +20,17 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-	if(sdk_run(game) == CANNOTSOLVE)
-		return -1;
-	
 	ofp = fopen("result", "w");
-	for(m = 0; m < 9; m++) {
-		for(n = 0; n < 9; n++) {
-			fprintf(ofp,"%d ", game[m][n]);
+	if(sdk_run(game) == CANNOTSOLVE) {
+		fprintf(ofp, "It is not solvable.\n");
+		return -1;
+	} else {
+		for(m = 0; m < 9; m++) {
+			for(n = 0; n < 9; n++) {
+				fprintf(ofp,"%d ", game[m][n]);
+			}
+			fprintf(ofp,"\n");
 		}
-		fprintf(ofp,"\n");
+		return 0;
 	}
-
-	return 0;
 }

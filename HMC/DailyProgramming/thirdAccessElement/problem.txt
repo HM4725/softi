@@ -1,0 +1,3 @@
+[Blizard interview]
+
+Print the element which is accessed the third most frequently in a list.

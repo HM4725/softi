@@ -17,6 +17,9 @@ while(1) {
 		case 'a':
 			tmp = list_access(atoi(cmd+2));
 			break;
+		case 's':
+			list_print_third_element();
+			break;
 		case 'p':
 			list_print();
 			break;

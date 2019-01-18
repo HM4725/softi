@@ -19,5 +19,6 @@ struct list_node_t {
 
 void list_insert(element_t element);
 node_t* list_access(int nid);
+void list_print_third_element();
 void list_print();
 #endif /* LIST_H */

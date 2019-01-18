@@ -43,3 +43,13 @@ Time complexity: **O(1)**
 1. Type `gcc -o bin list.c main.c`
 
 2. Type `./bin`
+
+- Supported Command
+```
+1. i [element]: Insert element(unsigned int).
+2. a [nid]: access the node has the nid.
+3. s: Print the correct answer (third element).
+4. p: Print in the order of insertions and frequency of access.
+5. q: Quit.
+```
+

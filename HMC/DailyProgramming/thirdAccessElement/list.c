@@ -100,6 +100,22 @@ node_t* list_access(int nid) {
 	return node;
 }
 
+void list_print_third_element() {
+	node_t* node = fheader;
+	int i;
+
+	if(node == NULL)
+		return;
+
+	for(i = 0; i < 2; i++) {
+		node = node->fnext;
+		if(node == NULL)
+			return;
+	}
+
+	printf("Solve: %u!\n", node->element);
+}
+
 void list_print() {
 	list_node_t* itr;
 

@@ -1,0 +1,4 @@
+[Microsoft interview]
+
+Convert a binary tree to a string.
+Then convert the string to the binary tree.

@@ -1,0 +1,33 @@
+[src]
+static1.c
+	static char arr[2][10];
+static2.c
+	static char *arr[2];
+		point the same element;
+static3.c
+	static char *arr[2];
+		point different elements;
+nonstatic1.c
+	char arr[2][10];
+nonstatic2.c
+	char *arr[2];
+		point the same element;
+nonstatic3.c
+	char *arr[2];
+		point different elements;
+
+
+[conclusion]
+	1. static string "" in a array of the data memory area.
+		doesn`t have '\0'.
+			>>> static1.c
+
+	2. local string "" in a array.
+		doesn`t have '\0'.
+			>>> nonstatic1.c
+
+	3. static string "" in the data memory area.
+		has '\0'.
+			>>> static2.c, static3.c, 
+				nonstatic2.c, nonstatic3.c
+

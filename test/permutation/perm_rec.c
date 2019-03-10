@@ -22,6 +22,6 @@ void perm(char* list, int i, int n){
 
 void main(){
 	char list[12]="hello world";
-	perm(list,0,10);
+	perm(list,5,10);
 	printf("total:%d\n",count);
 }

@@ -1,0 +1,1 @@
+javac -cp . -d bin @SOURCES
